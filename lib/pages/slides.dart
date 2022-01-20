@@ -60,13 +60,13 @@ class Slides extends StatelessWidget {
           next: Icon(Icons.arrow_forward),
           dotsDecorator: getDotDecoration(),
           onChange: (index) => print('Page $index selected'),
-          globalBackgroundColor: Theme.of(context).primaryColor,
+          globalBackgroundColor: Colors.white,
           skipFlex: 0,
           nextFlex: 0,
-          // isProgressTap: false,
-          // isProgress: false,
-          // showNextButton: false,
-          // freeze: true,
+          // isProgressTap: true,
+          // isProgress: true,
+          // showNextButton: true,
+          // // freeze: true,
           // animationDuration: 1000,
         ),
       );
@@ -80,7 +80,7 @@ class Slides extends StatelessWidget {
 
   DotsDecorator getDotDecoration() => DotsDecorator(
         color: Color(0xFFBDBDBD),
-        //activeColor: Colors.orange,
+        activeColor: Colors.blue,
         size: Size(10, 10),
         activeSize: Size(22, 10),
         activeShape: RoundedRectangleBorder(

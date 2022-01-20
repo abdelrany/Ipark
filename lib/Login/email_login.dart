@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:ipark/navbar/navigation.dart';
 import 'package:ipark/home.dart';
 import 'package:ipark/main.dart';
 
@@ -24,9 +25,11 @@ class _EmailLoginState extends State<EmailLogin> {
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: _emailController.text, password: _passwordController.text);
+      Navigator.of(context).pushNamedAndRemoveUntil(
+          BottomNavigationPage.tag, (Route<dynamic> route) => false);
 
-      Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => Home()));
+      // Navigator.of(context).push(
+      //     MaterialPageRoute(builder: (context) => BottomNavigationPage()));
     } on FirebaseAuthException catch (e) {
       var message = '';
 
