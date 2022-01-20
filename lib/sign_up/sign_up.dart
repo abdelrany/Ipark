@@ -27,61 +27,62 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppToolbar(title: 'Sign up'),
-        body: Form(
-          key: _formKey,
-          child: ListView(children: [
-            const SizedBox(height: 15),
-            UserImage(
-              onFileChanged: (imageUrl) {
-                setState(() {
-                  this.imageUrl = imageUrl;
-                });
+      appBar: AppToolbar(title: 'Sign up'),
+      body: Form(
+        key: _formKey,
+        child: ListView(children: [
+          const SizedBox(height: 15),
+          UserImage(
+            onFileChanged: (imageUrl) {
+              setState(() {
+                this.imageUrl = imageUrl;
+              });
+            },
+          ),
+          const SizedBox(height: 10),
+          _TextField(
+              label: 'Name',
+              controller: _nameController,
+              validator: _requiredValidator),
+          const SizedBox(height: 15),
+          _TextField(
+            label: 'Email',
+            controller: _emailController,
+            keyboardType: TextInputType.emailAddress,
+            validator: _requiredValidator,
+          ),
+          const SizedBox(height: 15),
+          _TextField(
+            label: 'Password',
+            controller: _passwordController,
+            validator: _requiredValidator,
+            password: true,
+          ),
+          const SizedBox(height: 15),
+          _TextField(
+            label: 'Confirm Password',
+            controller: _confirmPasswordController,
+            validator: _confirmPasswordValidator,
+            password: true,
+          ),
+          const SizedBox(height: 10),
+          if (loading) ...[
+            Center(child: CircularProgressIndicator()),
+          ],
+          if (!loading) ...[
+            SubmitButton(
+              onPressed: () {
+                if (_formKey.currentState != null &&
+                    _formKey.currentState!.validate()) {
+                  _signUp();
+                }
               },
+              padding: 16,
             ),
-            const SizedBox(height: 10),
-            _TextField(
-                label: 'Name',
-                controller: _nameController,
-                validator: _requiredValidator),
-            const SizedBox(height: 15),
-            _TextField(
-              label: 'Email',
-              controller: _emailController,
-              keyboardType: TextInputType.emailAddress,
-              validator: _requiredValidator,
-            ),
-            const SizedBox(height: 15),
-            _TextField(
-              label: 'Password',
-              controller: _passwordController,
-              validator: _requiredValidator,
-              password: true,
-            ),
-            const SizedBox(height: 15),
-            _TextField(
-              label: 'Confirm Password',
-              controller: _confirmPasswordController,
-              validator: _confirmPasswordValidator,
-              password: true,
-            ),
-            const SizedBox(height: 10),
-            if (loading) ...[
-              Center(child: CircularProgressIndicator()),
-            ],
-            if (!loading) ...[
-              SubmitButton(
-                onPressed: () {
-                  if (_formKey.currentState != null &&
-                      _formKey.currentState!.validate()) {
-                    _signUp();
-                  }
-                },
-                padding: 16,
-              ),
-            ],
-          ]),
-        ));
+          ],
+        ]),
+      ),
+    );
   }
 
   String? _requiredValidator(String? text) {

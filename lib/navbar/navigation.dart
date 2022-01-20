@@ -6,8 +6,8 @@ import 'package:ipark/navbar/Settings.dart';
 import 'package:ipark/navbar/booking.dart';
 import 'package:ipark/navbar/notofications.dart';
 
-
 class BottomNavigationPage extends StatefulWidget {
+  static String tag = 'BottomNavigationPage'; /* add this line*/
   @override
   _BottomNavigationPageState createState() => _BottomNavigationPageState();
 }
