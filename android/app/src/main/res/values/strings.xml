@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="app_name">ipark</string>
+<string name="facebook_app_id">525087468780566</string>
+<string name="fb_login_protocol_scheme">fb525087468780566</string>
+</resources>
