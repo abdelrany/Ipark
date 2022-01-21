@@ -3,14 +3,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:ipark/home.dart';
 import 'package:ipark/login/email_login.dart';
-import 'package:ipark/main.dart';
 import 'package:ipark/navbar/navigation.dart';
 import 'package:ipark/sign_up/sign_up.dart';
 import 'package:ipark/widgets/submit_button.dart';
 
-import 'login_text.dart';
+import '../widgets/login_text.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -21,6 +19,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   var loading = false;
+  
 
   void _logInWithFacebook() async {
     setState(() {

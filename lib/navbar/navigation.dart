@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, prefer_final_fields, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
-import 'package:ipark/home.dart';
+import 'package:ipark/screens/home/home_screan.dart';
 import 'package:ipark/navbar/Settings.dart';
 import 'package:ipark/navbar/booking.dart';
 import 'package:ipark/navbar/notofications.dart';
@@ -15,7 +15,7 @@ class BottomNavigationPage extends StatefulWidget {
 class _BottomNavigationPageState extends State<BottomNavigationPage> {
   int _currentIndex = 0;
   List<Widget> _widgetOptions = <Widget>[
-    Home(),
+    HomeScreen(),
     Notifications(),
     Booking(),
     Settings(),
@@ -41,8 +41,8 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
             label: 'timer',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'settings',
+            icon: Icon(Icons.account_circle),
+            label: 'profile',
           ),
         ],
         selectedItemColor: Colors.blue,

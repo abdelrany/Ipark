@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class LoginText extends StatelessWidget {
-
   final String text;
 
   const LoginText(this.text);
