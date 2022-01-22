@@ -2,15 +2,28 @@
 
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:ipark/home.dart';
+// import 'package:ipark/screens/home/home.dart';
 import '../Login/login.dart';
-import 'package:ipark/main.dart';
+// import 'package:ipark/main.dart';
 
 // import 'bNavPages/bottom_navigation_page.dart';
 // import 'bNavPages/home_page.dart';
 // import '../widget/button_widget.dart';
 
 class Slides extends StatelessWidget {
+
+  //route name method
+  static const String routeName = '/slides';
+
+  static Route route() {
+    return MaterialPageRoute(
+      builder: (_) => Slides(),
+      settings: RouteSettings(name: routeName),
+    );
+
+
+
+  }
   @override
   Widget build(BuildContext context) => SafeArea(
         child: IntroductionScreen(

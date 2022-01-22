@@ -1,8 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ipark/navbar/navigation.dart';
-import 'package:ipark/home.dart';
+import 'package:ipark/screens/home/home_screan.dart';
 import 'package:ipark/main.dart';
+import '../widgets/login_text.dart';
 
 class EmailLogin extends StatefulWidget {
   const EmailLogin({Key? key}) : super(key: key);
